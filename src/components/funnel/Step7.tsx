@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Users, TrendingUp, Heart, Trophy } from 'lucide-react';
 import { useEffect } from 'react';
 import { soundManager } from '@/utils/SoundManager';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step7Props {
@@ -14,13 +14,13 @@ interface Step7Props {
 const Step7 = ({ onNext }: Step7Props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackFunnelEvent(7, 'viewed');
+
     utmTracker.trackFunnelProgress(7, 'viewed');
   }, []);
 
   const handleNext = () => {
     soundManager.playSound('click');
-    trackFunnelEvent(7, 'next');
+
     utmTracker.trackFunnelProgress(7, 'next');
     onNext();
   };

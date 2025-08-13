@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Star, MessageCircle, CheckCheck, Phone, Users } from 'lucide-react';
 import { useEffect } from 'react';
-import { trackStep4View } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step4Props {
@@ -14,13 +14,8 @@ const Step4 = ({ onNext }: Step4Props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Track Facebook Pixel event for Step 4 (50% viewed)
-    trackStep4View();
-    
-    // Also track general funnel progression
-    import('@/utils/FacebookPixel').then(({ trackFunnelEvent }) => {
-      trackFunnelEvent(4, 'viewed');
-    });
+    // Track funnel progression
+    utmTracker.trackFunnelProgress(4, 'viewed');
     
     // Track UTM funnel progress
     utmTracker.trackFunnelProgress(4, 'viewed');

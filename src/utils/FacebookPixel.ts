@@ -1,7 +1,7 @@
 // Facebook Pixel Implementation
 import { utmTracker } from './UTMTracker';
 
-export const FB_PIXEL_ID = '648351014264709';
+export const FB_PIXEL_ID = '2064189057438416';
 
 // Initialize Facebook Pixel
 declare global {
@@ -49,27 +49,10 @@ export const trackFacebookEvent = (eventName: string, parameters?: any) => {
   }
 };
 
-// Track Page View
-export const trackPageView = () => {
-  trackFacebookEvent('PageView');
-};
-
-// Track 50% View Event for Step 4
-export const trackStep4View = () => {
-  trackFacebookEvent('Step4Viewed', {
-    content_name: 'Step 4 Social Proof',
-    content_category: 'funnel',
-    value: 0.5,
-    currency: 'BRL'
-  });
-};
-
-// Track Custom Funnel Events
-export const trackFunnelEvent = (step: number, eventType: string) => {
-  trackFacebookEvent(`Funnel_Step${step}_${eventType}`, {
-    step: step,
-    event_type: eventType,
-    content_name: `Step ${step}`,
-    content_category: 'funnel_progression'
+// Track final step event
+export const trackFinalStep = () => {
+  trackFacebookEvent('chegou_final', {
+    content_name: 'Final Step Reached',
+    content_category: 'funnel_completion'
   });
 };

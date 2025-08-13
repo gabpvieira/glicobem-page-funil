@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Lightbulb } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step3Props {
@@ -17,7 +17,7 @@ const Step3 = ({ onNext, onAnswer }: Step3Props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackFunnelEvent(3, 'viewed');
+
     utmTracker.trackFunnelProgress(3, 'viewed');
   }, []);
 
@@ -89,7 +89,7 @@ const Step3 = ({ onNext, onAnswer }: Step3Props) => {
     onAnswer('challenge', challenge);
     
     console.log('🔊 Click sound');
-    trackFunnelEvent(3, 'next');
+
     utmTracker.trackFunnelProgress(3, 'next');
 
     setTimeout(() => {

@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { CheckCircle, Download, Gift, Star, Shield, ShoppingCart } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useEffect } from 'react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+import { trackFinalStep } from '@/utils/FacebookPixel';
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step8Props {
@@ -15,7 +15,7 @@ const Step8 = ({ userAnswers }: Step8Props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
     console.log('🔊 Success sound');
-    trackFunnelEvent(8, 'viewed');
+    trackFinalStep();
     utmTracker.trackFunnelProgress(8, 'viewed');
 
     // Inject VSL script
@@ -35,7 +35,7 @@ const Step8 = ({ userAnswers }: Step8Props) => {
   const handleCheckout = () => {
     console.log('🔊 Success sound');
     console.log('Redirecionando para checkout...', userAnswers);
-    trackFunnelEvent(8, 'checkout');
+    
     utmTracker.trackConversion(19.90);
     
     // Redirect to checkout with UTM parameters

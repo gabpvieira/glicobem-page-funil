@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Star, CheckCircle, TrendingUp, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step1Props {
@@ -18,7 +18,7 @@ const Step1 = ({ onNext }: Step1Props) => {
     console.log('🔊 Welcome sound');
 
     // Track Step 1 viewed
-    trackFunnelEvent(1, 'viewed');
+
     utmTracker.trackFunnelProgress(1, 'viewed');
 
     // Animate social count
@@ -31,7 +31,7 @@ const Step1 = ({ onNext }: Step1Props) => {
 
   const handleStart = () => {
     console.log('🔊 Click sound');
-    trackFunnelEvent(1, 'next');
+
     utmTracker.trackFunnelProgress(1, 'next');
     onNext();
   };

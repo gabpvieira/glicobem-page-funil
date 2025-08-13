@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Check, Wheat, Book, Cake, Coffee } from 'lucide-react';
 import { useEffect } from 'react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step5Props {
@@ -13,7 +13,7 @@ interface Step5Props {
 const Step5 = ({ onNext }: Step5Props) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackFunnelEvent(5, 'viewed');
+
     utmTracker.trackFunnelProgress(5, 'viewed');
   }, []);
 
@@ -120,7 +120,7 @@ const Step5 = ({ onNext }: Step5Props) => {
         >
           <Button
             onClick={() => {
-              trackFunnelEvent(5, 'next');
+        
               utmTracker.trackFunnelProgress(5, 'next');
               onNext();
             }}

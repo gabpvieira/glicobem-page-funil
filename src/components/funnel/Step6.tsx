@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Check, Clock, Shield, ShoppingCart, Star } from 'lucide-react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step6Props {
@@ -16,7 +16,7 @@ const Step6 = ({ onNext }: Step6Props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackFunnelEvent(6, 'viewed');
+
     utmTracker.trackFunnelProgress(6, 'viewed');
 
     const timer = setInterval(() => {
@@ -42,7 +42,7 @@ const Step6 = ({ onNext }: Step6Props) => {
 
   const handleNext = () => {
     console.log('🔊 Click sound');
-    trackFunnelEvent(6, 'next');
+    
     utmTracker.trackFunnelProgress(6, 'next');
     onNext();
   };

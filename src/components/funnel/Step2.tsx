@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { Check, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { trackFunnelEvent } from '@/utils/FacebookPixel';
+
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step2Props {
@@ -16,7 +16,7 @@ const Step2 = ({ onNext, onAnswer }: Step2Props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    trackFunnelEvent(2, 'viewed');
+
     utmTracker.trackFunnelProgress(2, 'viewed');
   }, []);
 
@@ -79,7 +79,7 @@ const Step2 = ({ onNext, onAnswer }: Step2Props) => {
     onAnswer('profile', option);
     
     console.log('🔊 Click sound');
-    trackFunnelEvent(2, 'next');
+
     utmTracker.trackFunnelProgress(2, 'next');
     
     setTimeout(() => {
