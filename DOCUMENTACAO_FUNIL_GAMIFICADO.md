@@ -655,7 +655,7 @@ transition={{ duration: 0.3 }}
 const handleCheckout = () => {
   console.log('🔊 Success sound');
   console.log('Redirecionando para checkout...', userAnswers);
-  window.location.href = 'https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by' + window.location.search;
+  window.location.href="https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by" + window.location.search;
 };
 ```
 
