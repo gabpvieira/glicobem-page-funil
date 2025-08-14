@@ -38,9 +38,10 @@ const Step8 = ({ userAnswers }: Step8Props) => {
     
     utmTracker.trackConversion(19.90);
     
-    // Redirect to checkout with UTM parameters
-    const checkoutUrl = utmTracker.buildUTMUrl('https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by');
-    window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+    // Force redirect to checkout with all URL parameters
+    const baseUrl = 'https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by';
+    const fullUrl = `${baseUrl}${window.location.search}`;
+    window.location.href = fullUrl;
   };
 
   const benefits = [

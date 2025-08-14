@@ -70,9 +70,10 @@ const handleCheckout = () => {
   trackFunnelEvent(8, 'checkout');
   utmTracker.trackConversion(19.90);
   
-  // URL com parâmetros UTM preservados
-  const checkoutUrl = utmTracker.buildUTMUrl('https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by');
-  window.open(checkoutUrl, '_blank');
+  // Redirecionamento forçado com todos os parâmetros de URL
+  const baseUrl = 'https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by';
+  const fullUrl = `${baseUrl}${window.location.search}`;
+  window.location.href = fullUrl;
 };
 ```
 
