@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { CheckCircle, Download, Gift, Star, Shield, ShoppingCart } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useEffect } from 'react';
-import { trackFinalStep } from '@/utils/FacebookPixel';
+import { trackFinalStep } from '@/utils/UTMifyPixel';
 import { utmTracker } from '@/utils/UTMTracker';
 
 interface Step8Props {
