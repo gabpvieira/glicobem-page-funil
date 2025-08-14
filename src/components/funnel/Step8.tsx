@@ -39,7 +39,7 @@ const Step8 = ({ userAnswers }: Step8Props) => {
     utmTracker.trackConversion(19.90);
     
     // Redirect to checkout with UTM parameters
-    const checkoutUrl = utmTracker.buildUTMUrl('https://seguro.dicassaudeonline.com.br/r/BE0KV5608N');
+    const checkoutUrl = utmTracker.buildUTMUrl('https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by');
     window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
   };
 

@@ -655,7 +655,7 @@ transition={{ duration: 0.3 }}
 const handleCheckout = () => {
   console.log('🔊 Success sound');
   console.log('Redirecionando para checkout...', userAnswers);
-  window.open('https://seguro.dicassaudeonline.com.br/r/BE0KV5608N', '_blank', 'noopener,noreferrer');
+  window.open('https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by', '_blank', 'noopener,noreferrer');
 };
 ```
 

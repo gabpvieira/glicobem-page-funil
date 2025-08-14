@@ -71,7 +71,7 @@ const handleCheckout = () => {
   utmTracker.trackConversion(19.90);
   
   // URL com parâmetros UTM preservados
-  const checkoutUrl = utmTracker.buildUTMUrl('https://seguro.dicassaudeonline.com.br/r/BE0KV5608N');
+  const checkoutUrl = utmTracker.buildUTMUrl('https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by');
   window.open(checkoutUrl, '_blank');
 };
 ```
@@ -118,7 +118,7 @@ Parâmetros UTM são armazenados em:
 - `utm_session_id` - ID único da sessão
 
 ## URLs de Checkout
-- **Produção**: `https://seguro.dicassaudeonline.com.br/r/BE0KV5608N`
+- **Produção**: `https://www.ggcheckout.com/checkout/v2/qKCrW40YMD1dZ0rcv4by`
 - **Com UTM**: Automaticamente construído preservando todos os parâmetros
 
 ## Suporte para Campanhas
